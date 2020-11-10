@@ -1,7 +1,6 @@
 public class Person {
+    private final TelephoneNumber telephoneNumber = new TelephoneNumber();
     private String name;
-    private String officeAreaCode;
-    private String officeNumber;
 
     public String getName() {
         return name;
@@ -9,27 +8,27 @@ public class Person {
 
     public Person(String name, String officeAreaCode, String officeNumber) {
         this.name = name;
-        this.officeAreaCode = officeAreaCode;
-        this.officeNumber = officeNumber;
+        this.telephoneNumber.setOfficeAreaCode(officeAreaCode);
+        this.telephoneNumber.setOfficeNumber(officeNumber);
     }
 
     public String getTelephoneNumber() {
-        return ("(" + officeAreaCode + ") " + officeNumber);
+        return ("(" + telephoneNumber.getOfficeAreaCode() + ") " + telephoneNumber.getOfficeNumber());
     }
 
     String getOfficeAreaCode() {
-        return officeAreaCode;
+        return telephoneNumber.getOfficeAreaCode();
     }
 
     void setOfficeAreaCode(String arg) {
-        officeAreaCode = arg;
+        telephoneNumber.setOfficeAreaCode(arg);
     }
 
     String getOfficeNumber() {
-        return officeNumber;
+        return telephoneNumber.getOfficeNumber();
     }
 
     void setOfficeNumber(String arg) {
-        officeNumber = arg;
+        telephoneNumber.setOfficeNumber(arg);
     }
 }
